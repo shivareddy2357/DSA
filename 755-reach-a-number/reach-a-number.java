@@ -4,12 +4,14 @@ class Solution {
         int sum=0;
         int i=1;
         int step=0;
-        while(sum<target){
+        while(sum<target)
+        {
             sum+=i;
             step++;
             i++;
         }
-        while((sum-target)%2!=0){       
+        while((sum-target)%2!=0)
+        {
             sum+=i;
             i++;
             step++;
