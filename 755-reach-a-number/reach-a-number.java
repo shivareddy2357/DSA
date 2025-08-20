@@ -1,18 +1,19 @@
 class Solution {
     public int reachNumber(int target) {
-        int sum =0 ,steps = 0;
-        if(target ==0) return 0;
-        target = Math.abs(target);
-        while(sum< target){
-            sum+=steps;
-            steps++;
+        target=Math.abs(target);
+        int sum=0;
+        int i=1;
+        int step=0;
+        while(sum<target){
+            sum+=i;
+            step++;
+            i++;
         }
-        
-        while(((sum-target)%2!=0)){
-            sum+=steps;
-            steps++;
+        while((sum-target)%2!=0){       
+            sum+=i;
+            i++;
+            step++;
         }
-        return steps-1;
-
+        return step;
     }
 }
