@@ -9,9 +9,9 @@ class Solution {
                 return true;
             }
             if(target < matrix[i][j]){
-                j--;//move left      
+                j--;
             } else {
-                i++;//move right
+                i++;
             }
         }
         return false;
