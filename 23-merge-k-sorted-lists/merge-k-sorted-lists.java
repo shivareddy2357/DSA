@@ -14,18 +14,23 @@ class Solution {
         
         ListNode head=new ListNode(0);
         ListNode temp=head;
-        List<Integer> l=new ArrayList<>();
-        for(ListNode list:lists){
-            while(list!=null){
-                l.add(list.val);
-                list=list.next;
+        
+        while(true){
+            int p=0;
+            for(int i=0;i<lists.length;i++){
+                if(lists[p]==null || (lists[i]!=null && lists[p].val>lists[i].val)){
+                    p=i;
+                }
             }
-        }
-        Collections.sort(l);
-        for(int val:l){
-            temp.next=new ListNode(val);
+            
+            if(lists[p]==null){
+                break;
+            }
+            temp.next=new ListNode(lists[p].val);
             temp=temp.next;
+            lists[p]=lists[p].next;
         }
+        
         return head.next;
     }
 }
