@@ -2,6 +2,7 @@ class Solution {
     public boolean hasSameDigits(String s) {
       if(s.length()<2)return false;
         if(s.length()==2){
+            //check if both char are =
             return s.charAt(0)==s.charAt(1);
         }
         StringBuilder nstr=new StringBuilder();
